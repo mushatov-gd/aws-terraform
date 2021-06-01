@@ -10,7 +10,7 @@ pipeline{
     stages{
         stage('Git Checkout'){
             steps{
-                git 'https://github.com/m-ushatov/terraform'
+                git 'https://github.com/mushatov-gd/aws-terraform.git'
             }
         }
         stage('AWS Configure'){
