@@ -29,7 +29,7 @@ pipeline{
         }
         stage('Terraform Apply'){
             steps{
-                sh 'terraform destroy'
+                sh 'terraform init'
             }
         }
     }
