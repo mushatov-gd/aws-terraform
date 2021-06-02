@@ -24,7 +24,7 @@ pipeline{
         }
         stage('Terraform Init'){
             steps{
-                sh 'terraform init -force-copy'
+                sh 'terraform init'
             }
         }
         stage('Terraform Apply'){
