@@ -29,7 +29,7 @@ pipeline{
         }
         stage('Terraform Apply'){
             steps{
-                sh 'terraform apply state rm'
+                sh 'terraform state rm'
             }
         }
     }
