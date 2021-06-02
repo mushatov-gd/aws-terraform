@@ -1,7 +1,7 @@
 pipeline{
     agent any
     tools {
-        terraform 'terraform-0.17.1'
+        terraform 'terraform-0.15.3'
     }
     environment {
         AWS_ACCESS_KEY_ID = credentials('AWS_ACCESS_KEY_ID')
@@ -10,7 +10,7 @@ pipeline{
     stages{
         stage('Git Checkout'){
             steps{
-                git 'https://github.com/mushatov-gd/aws-terraform.git'
+                git 'https://github.com/mushatov-gd/aws-terraform'
             }
         }
         stage('AWS Configure'){
@@ -18,13 +18,13 @@ pipeline{
                 sh '''
                     aws configure set aws_access_key_id ${AWS_ACCESS_KEY_ID}
                     aws configure set aws_secret_access_key ${AWS_SECRET_ACCESS_KEY}
-                    aws configure set default.region us-east-1
+                    aws configure set default.region us-east-2
                 '''
             }
         }
         stage('Terraform Init'){
             steps{
-                sh 'terraform init'
+                sh 'terraform init -force-copy'
             }
         }
         stage('Terraform Apply'){
