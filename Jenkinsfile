@@ -24,12 +24,12 @@ pipeline{
         }
         stage('Terraform Init'){
             steps{
-                sh 'terraform init -reconfigure'
+                sh 'terraform init'
             }
         }
         stage('Terraform Apply'){
             steps{
-                sh 'terraform init'
+                sh 'terraform apply --auto-approve'
             }
         }
     }
