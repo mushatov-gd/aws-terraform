@@ -15,10 +15,10 @@ resource "aws_s3_bucket" "terraform_state" {
   bucket = "gd-site-terraform-state"
 }
 
-terraform {
+/*terraform {
   backend "s3"{
     bucket = "gd-site-terraform-state"
     key = "terraform.tfstate"
     region = "us-east-2"
   }
-}
+}*/
