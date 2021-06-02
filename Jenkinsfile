@@ -29,7 +29,7 @@ pipeline{
         }
         stage('Terraform Apply'){
             steps{
-                sh 'terraform state rm -ignore-remote-version'
+                sh 'terraform destroy'
             }
         }
     }
